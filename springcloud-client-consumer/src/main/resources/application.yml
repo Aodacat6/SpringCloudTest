@@ -1,8 +1,14 @@
 server:
-  port: 8082
-  servlet:
-    context-path: /springcloudconsumer
+  port: 8070
+
+eureka:
+  client:
+    #这里是eureka的客户端，要向eureka的服务端进行注册
+    register-with-eureka: false #是否将自己注册到Eureka服务中，如果这里为false则eureka中不显示
+    fetch-registry: true      #是否从Eureka中获取注册信息
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
 
 spring:
   application:
-    name: springcloudconsumer
+    name: springcloudclient-consumer

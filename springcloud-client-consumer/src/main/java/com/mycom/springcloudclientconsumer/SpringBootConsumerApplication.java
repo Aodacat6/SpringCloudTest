@@ -2,6 +2,8 @@ package com.mycom.springcloudclientconsumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,12 +15,15 @@ import org.springframework.web.client.RestTemplate;
  * @version: $
  */
 @SpringBootApplication
+@EnableEurekaClient
 public class SpringBootConsumerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootConsumerApplication.class, args);
     }
+
     @Bean
+    @LoadBalanced
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }

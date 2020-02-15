@@ -24,7 +24,13 @@ public class ConsumerController {
 
     @GetMapping("/{id}")
     public VipInfo getVipById(@PathVariable int id){
+
         return restTemplate.getForObject
-                ("http://localhost:8081/springcloudprovider/getvipbyid/" + Integer.toString(id), VipInfo.class);
+                //不用eureka时写死地址
+                //("http://localhost:8081/getvipbyid/" + Integer.toString(id), VipInfo.class);
+                  //使用eureka，多个服务，根据服务名灵活选择
+                  ("http://springcloudclient-provider/getvipbyid/" + Integer.toString(id), VipInfo.class);
     }
+
+
 }
