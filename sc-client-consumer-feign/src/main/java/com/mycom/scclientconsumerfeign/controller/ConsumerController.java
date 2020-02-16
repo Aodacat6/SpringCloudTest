@@ -1,12 +1,15 @@
-package com.mycom.springcloudclientconsumer.controller;
+package com.mycom.scclientconsumerfeign.controller;
 
-import com.mycom.springcloudclientconsumer.entity.VipInfo;
+import com.mycom.scclientconsumerfeign.entity.VipInfo;
+import com.mycom.scclientconsumerfeign.feignclient.FeignInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import javax.annotation.Resource;
 
 /**
  * @author ：damiaokuaipao
@@ -19,18 +22,13 @@ import org.springframework.web.client.RestTemplate;
 @RequestMapping("/getvipbyid")
 public class ConsumerController {
 
-    @Autowired
-    private RestTemplate restTemplate;
+    @Resource
+    private FeignInterface feignInterface;
 
     @GetMapping("/{id}")
     public VipInfo getVipById(@PathVariable int id){
 
-        return restTemplate.getForObject
-                //不用eureka时写死地址
-                //("http://localhost:8081/getvipbyid/" + Integer.toString(id), VipInfo.class);
-                  //使用eureka，多个服务，根据服务名灵活选择
-                   //这里使用的是resttemplate + ribbon的服务访问方式
-                  ("http://springcloudclient-provider/getvipbyid/" + Integer.toString(id), VipInfo.class);
+        return feignInterface.getVipById(id);
     }
 
 

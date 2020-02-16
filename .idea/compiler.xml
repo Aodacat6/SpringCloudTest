@@ -10,6 +10,7 @@
         <module name="springcloudserviceprovider" />
         <module name="springcloudeureka" />
         <module name="springcloud-service-provider2" />
+        <module name="scclientconsumerfeign" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -19,6 +20,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SpringCloudTest" options="-parameters" />
+      <module name="scclientconsumerfeign" options="-parameters" />
       <module name="springcloud-service-provider2" options="-parameters" />
       <module name="springcloudclientconsumer" options="-parameters" />
       <module name="springcloudeureka" options="-parameters" />

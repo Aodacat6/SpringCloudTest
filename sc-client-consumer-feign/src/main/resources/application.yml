@@ -1,0 +1,13 @@
+server:
+  port: 8071
+
+spring:
+  application:
+    name: scclient-consumer-feign
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8090/eureka/

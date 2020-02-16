@@ -13,6 +13,7 @@
         <module>springcloud-client-consumer</module>
         <module>springcloud-eureka</module>
         <module>springcloud-service-provider2</module>
+        <module>sc-client-consumer-feign</module>
     </modules>
 
     <parent>
