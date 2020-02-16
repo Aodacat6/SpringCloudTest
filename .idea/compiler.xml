@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springcloudclientconsumer" />
-        <module name="springcloudserviceprovider" />
-        <module name="springcloudeureka" />
-        <module name="springcloud-service-provider2" />
+        <module name="scclientconsumerhystrix" />
         <module name="scclientconsumerfeign" />
+        <module name="springcloud-service-provider2" />
+        <module name="springcloudeureka" />
+        <module name="springcloudserviceprovider" />
+        <module name="springcloudclientconsumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -21,6 +22,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SpringCloudTest" options="-parameters" />
       <module name="scclientconsumerfeign" options="-parameters" />
+      <module name="scclientconsumerhystrix" options="-parameters" />
       <module name="springcloud-service-provider2" options="-parameters" />
       <module name="springcloudclientconsumer" options="-parameters" />
       <module name="springcloudeureka" options="-parameters" />

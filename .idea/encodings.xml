@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sc-client-consumer-feign" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sc-client-consumer-hystrix" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-client-consumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-service-provider" charset="UTF-8" />
