@@ -1,0 +1,15 @@
+server:
+  port: 8050
+
+spring:
+  application:
+    name: scconfig-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Aodacat6/SpringCloudTest.git
+          search-paths: SpringCloudConfigRepostory
+          username: ""
+          password: ""
+      label: master

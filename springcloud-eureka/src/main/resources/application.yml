@@ -10,6 +10,9 @@ eureka:
     register-with-eureka: false #是否将自己注册到Eureka服务中,本身就是所有无需注册
     service-url:                #Eureka客户端与Eureka服务端进行交互的地址
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    evictionIntervalTimerInMs: 5000  #驱逐下线的服务，间隔,5秒，默认是60
+
 security:
   basic:
     enable: false # 开启basic认证

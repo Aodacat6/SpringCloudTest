@@ -8,6 +8,9 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://localhost:8090/eureka/
+  instance:       #这个节点配合eureka服务端的server配置，实现自定义服务心跳和下线机制
+    leaseRenewalIntervalInSeconds: 2     #心跳间隔时间,默认是30秒
+    leaseExpirationDurationInSeconds: 6  #最后一次心跳时间后多少秒就认为是下线了，默认是90秒
 
 spring:
   application:

@@ -15,6 +15,9 @@
         <module>springcloud-service-provider2</module>
         <module>sc-client-consumer-feign</module>
         <module>sc-client-consumer-hystrix</module>
+        <module>sc-client-zuul</module>
+        <module>sc-client-configserver</module>
+        <module>sc-configclient</module>
     </modules>
 
     <parent>

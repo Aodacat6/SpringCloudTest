@@ -1,0 +1,29 @@
+server:
+  port: 8060
+
+spring:
+  application:
+    name: springcloudclient-zuul
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8090/eureka/
+
+zuul:
+  routes:
+    ribbon:
+      path: /ribbon/**
+      serviceId: springcloudclient-consumer
+    feign:
+      path: /feign/**
+      serviceId: scclient-consumer-feign
+    hystrix:
+      path: /hystrix/**
+      serviceId: scclient-consumer-hystrix
+
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000

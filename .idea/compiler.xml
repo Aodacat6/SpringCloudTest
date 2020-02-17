@@ -7,22 +7,30 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="scclientconsumerhystrix" />
+        <module name="scclientzuul" />
         <module name="scclientconsumerfeign" />
-        <module name="springcloud-service-provider2" />
+        <module name="scconfigclient" />
         <module name="springcloudeureka" />
         <module name="springcloudserviceprovider" />
+        <module name="sc-client-configserver" />
+        <module name="springcloud-service-provider2" />
         <module name="springcloudclientconsumer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="scconfigserver" target="1.8" />
       <module name="testtt" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="SpringCloudTest" options="-parameters" />
+      <module name="sc-client-configserver" options="-parameters" />
       <module name="scclientconsumerfeign" options="-parameters" />
       <module name="scclientconsumerhystrix" options="-parameters" />
+      <module name="scclientzuul" options="-parameters" />
+      <module name="scconfigclient" options="-parameters" />
+      <module name="scconfigserver" options="-parameters" />
       <module name="springcloud-service-provider2" options="-parameters" />
       <module name="springcloudclientconsumer" options="-parameters" />
       <module name="springcloudeureka" options="-parameters" />

@@ -1,0 +1,9 @@
+#bootstrap.yml启动时优先于application.yml
+spring:
+  application:
+    name: application
+  cloud:      #这里配置configserver信息
+    config:
+      uri: http://127.0.0.1:8050/
+      profile: pro
+      label: master
