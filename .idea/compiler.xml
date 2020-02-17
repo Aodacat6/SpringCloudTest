@@ -12,8 +12,8 @@
         <module name="scconfigclient" />
         <module name="springcloudeureka" />
         <module name="springcloudserviceprovider" />
-        <module name="sc-client-configserver" />
         <module name="springcloud-service-provider2" />
+        <module name="sc-client-configserver" />
         <module name="springcloudclientconsumer" />
       </profile>
     </annotationProcessing>
