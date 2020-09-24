@@ -1,0 +1,12 @@
+server:
+  port: 8099
+
+spring:
+  application:
+    name: spring-test
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
