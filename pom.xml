@@ -18,6 +18,7 @@
         <module>sc-client-zuul</module>
         <module>sc-configserver</module>
         <module>sc-configclient</module>
+        <module>spring-test</module>
     </modules>
 
     <parent>
