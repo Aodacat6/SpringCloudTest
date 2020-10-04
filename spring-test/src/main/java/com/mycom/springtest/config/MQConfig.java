@@ -16,8 +16,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MQConfig {
 
-    @Bean
+    @Bean("springTestQueue")
     public Queue springTestQueue(){
         return new Queue("spring-test", true);
+    }
+
+    @Bean("springTest2Queue")
+    public Queue springTest2Queue(){
+        return new Queue("spring-test2", true);
     }
 }

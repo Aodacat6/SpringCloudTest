@@ -1,15 +1,13 @@
 package com.mycom.springtest.listener;
 
 import com.mycom.springtest.config.MQConfig;
-import org.omg.CORBA.PUBLIC_MEMBER;
-import org.springframework.amqp.core.AmqpTemplate;
+import com.mycom.springtest.sender.MessageSenderUtil;
+import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 
 /**
  * @author ：songdalin
@@ -19,11 +17,19 @@ import javax.annotation.PostConstruct;
  * @version: 1.0
  */
 @Component
-@RabbitListener(MQConfig.class)
-public class MessageListener {
+//@RabbitListener(queues = "spring-test")
+public class SpringTestListener {
 
+    @Autowired
+    private MessageSenderUtil senderUtil;
+
+    @Autowired
+    private MQConfig mqConfig;
+
+    @RabbitListener(queuesToDeclare = @Queue("spring-test"))
     @RabbitHandler
     public void listener(String message){
-        System.out.println("接受消息：" + message);
+        System.out.println("队列spring-test接受消息：" + message);
+        senderUtil.send(mqConfig.springTest2Queue(), message);
     }
 }

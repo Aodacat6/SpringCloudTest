@@ -1,6 +1,7 @@
 package com.mycom.springtest.sender;
 
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -12,13 +13,13 @@ import org.springframework.stereotype.Component;
  * @version: 1.0
  */
 @Component
-public class MessageSender {
+public class MessageSenderUtil {
 
     @Autowired
     private AmqpTemplate amqpTemplate;
 
-    public void send(String message){
-        amqpTemplate.convertAndSend("spring-test", message);
-        System.out.println("发送消息：" + message);
+    public void send(Queue queue, String message){
+        amqpTemplate.convertAndSend(queue.getName(), message);
+        System.out.println("向队列："+queue.getName()+",发送消息：" + message);
     }
 }
